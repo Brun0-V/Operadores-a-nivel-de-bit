@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 void imprimirBin(int num);
-int multPorDos(int num);
+int divPorDos(int num);
 
 int main() {
     int num;
     printf("Ingrese un número entero (0-255): ");
     scanf("%d", &num);
-    num = multPorDos(num);
+    num = divPorDos(num);
     printf("Decimal: %d\n", num);
     printf("Binario: ");
     imprimirBin(num);
@@ -31,6 +31,6 @@ void imprimirBin(int num) {
     printf("\n");
 }
 
-int multPorDos(int num){
-    return num << 1;
+int divPorDos(int num){
+    return num >> 1;
 } 
