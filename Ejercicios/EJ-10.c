@@ -1,10 +1,6 @@
 #include <stdio.h>
 
-int haveCommonBits(int num1, int num2) {
-    int commonBits = num1 & num2;
-    
-    return commonBits != 0;
-}
+int haveCommonBits(int num1, int num2);
 
 int main() {
     int num1, num2;
@@ -16,4 +12,9 @@ int main() {
     else
         printf("Los números no tienen bits encendidos en común.\n");
     return 0;
+}
+
+int haveCommonBits(int num1, int num2) {
+    int commonBits = num1 & num2;
+    return commonBits != 0;
 }
