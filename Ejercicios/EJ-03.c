@@ -4,10 +4,8 @@ int countSetBits(int num);
 
 int main() {
     int num;
-    printf("Ingrese un número entero (0-255): ");
-    scanf("%d", &num);
-    num = countSetBits(num);
-    printf("Cantidad de bits encendidos (1): %d\n", num);
+    printf("Ingrese un número entero (0-255): "); scanf("%d", &num);
+    printf("Cantidad de bits encendidos (1): %d\n", countSetBits(num));
     return 0;
 }
 

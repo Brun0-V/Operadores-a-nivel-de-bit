@@ -4,8 +4,7 @@ int checkMSB(int num);
 
 int main() {
     int num;
-    printf("Ingrese un número entero (0-255): ");
-    scanf("%d", &num);
+    printf("Ingrese un número entero (0-255): "); scanf("%d", &num);
     if (checkMSB(num))
         printf("El bit más significativo es 0.\n");
     else
