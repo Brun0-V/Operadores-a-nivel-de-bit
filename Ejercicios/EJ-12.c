@@ -1,9 +1,6 @@
 #include <stdio.h>
 
-int areEqual(int num1, int num2) {
-    int result = (num1 ^ num2) == 0;
-    return result;
-}
+int areEqual(int num1, int num2);
 
 int main() {
     int num1, num2;
@@ -14,4 +11,8 @@ int main() {
     else
         printf("Los números no son iguales.\n");
     return 0;
+}
+
+int areEqual(int num1, int num2) {
+    return (num1 ^ num2) == 0;
 }
