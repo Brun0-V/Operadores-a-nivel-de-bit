@@ -244,6 +244,22 @@ void swapBits(int* num, int pos1, int pos2) {
 
 Escribe una función que verifique si dos números enteros ingresados por el usuario tienen al menos un bit encendido en común (pista: "&"). Mostrar el resultado por pantalla.
 ```c
+#include <stdio.h>
+
+int haveCommonBits(int num1, int num2);
+
+int main() {
+    int num1, num2;
+    printf("Ingrese el primer número entero (0-255): "); scanf("%d", &num1);
+    printf("Ingrese el segundo número entero (0-255): "); scanf("%d", &num2);
+    int result = haveCommonBits(num1, num2);
+    (result) ? printf("Los números tienen al menos un bit encendido en común.\n") : printf("Los números no tienen bits encendidos en común.\n");
+}
+
+int haveCommonBits(int num1, int num2) {
+    int commonBits = num1 & num2;
+    return commonBits != 0;
+}
 
 ```
 
@@ -251,13 +267,53 @@ Escribe una función que verifique si dos números enteros ingresados por el usu
 
 Escribe una función que realice la operación lógica NAND entre dos números enteros ingresados por el usuario (pista: "&" y "~"). Mostrar el resultado por pantalla.
 ```c
+#include <stdio.h>
 
+#define BYTE_TO_BINARY_PATTERN "%c%c%c%c%c%c%c%c"
+#define BYTE_TO_BINARY(byte)  \
+  ((byte) & 0x80 ? '1' : '0'), \
+  ((byte) & 0x40 ? '1' : '0'), \
+  ((byte) & 0x20 ? '1' : '0'), \
+  ((byte) & 0x10 ? '1' : '0'), \
+  ((byte) & 0x08 ? '1' : '0'), \
+  ((byte) & 0x04 ? '1' : '0'), \
+  ((byte) & 0x02 ? '1' : '0'), \
+  ((byte) & 0x01 ? '1' : '0') 
+
+int logicalNAND(int num1, int num2);
+
+int main() {
+    int num1, num2;
+    printf("Ingrese el primer número entero (0-255): "); scanf("%d", &num1);
+    printf("Ingrese el segundo número entero (0-255): "); scanf("%d", &num2);
+    printf("Resultado en binario: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(logicalNAND(num1, num2))); printf("\n");
+    return 0;
+}
+
+int logicalNAND(int num1, int num2) {
+    int result = ~(num1 & num2);
+    return result;
+}
 ```
 
 [Ejercicio Nº12](/Ejercicios/EJ-12.c)
 
 Escribe una función que verifique si dos números enteros ingresados por el usuario son iguales utilizando el operador "^" y una comparación adicional con cero. Mostrar el resultado por pantalla.
 ```c
+#include <stdio.h>
 
+int areEqual(int num1, int num2);
+
+int main() {
+    int num1, num2;
+    printf("Ingrese el primer número entero: "); scanf("%d", &num1);
+    printf("Ingrese el segundo número entero: "); scanf("%d", &num2);
+    areEqual(num1, num2) ? printf("Los números son iguales.\n") : printf("Los números no son iguales.\n");
+    return 0;
+}
+
+int areEqual(int num1, int num2) {
+    return (num1 ^ num2) == 0;
+}
 ```
 
