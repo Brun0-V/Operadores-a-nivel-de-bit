@@ -6,10 +6,7 @@ int main() {
     int num1, num2;
     printf("Ingrese el primer número entero: "); scanf("%d", &num1);
     printf("Ingrese el segundo número entero: "); scanf("%d", &num2);
-    if (areEqual(num1, num2))
-        printf("Los números son iguales.\n");
-    else
-        printf("Los números no son iguales.\n");
+    areEqual(num1, num2) ? printf("Los números son iguales.\n") : printf("Los números no son iguales.\n");
     return 0;
 }
 
